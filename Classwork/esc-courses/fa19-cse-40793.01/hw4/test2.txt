@@ -1,0 +1,40 @@
+# File
+  Size:
+      Empty.						
+      Not empty.
+  Number of lines in the file:
+      None.							
+      One.						
+      Thousand.					
+  
+# Filename
+  Presence of a file corresponding to the name:
+      Not present.					
+      Present.					
+
+# SpecifiedLines
+  Presence of line number to split at:
+	Not present. 
+	Present. 
+
+  Integer:
+	Is an int.
+	Is not and int.  
+
+# FileData
+  Length:
+    0. 			
+	size.
+	maxint.
+	size*2.
+
+  Content:
+	alphanumeric characters. 	
+	special characters.			
+	spaces.						
+
+  Value:
+    0.
+    >0.
+    <0.				
+    maxint. 		

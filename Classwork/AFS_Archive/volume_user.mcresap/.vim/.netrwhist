@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/afs/nd.edu/user28/mcresap/datastruct/data_structures/challenge-code'
+let g:netrw_dirhist_2='/afs/nd.edu/user28/mcresap/datastruct/data_structures/lecture-code/03-linked-lists'
+let g:netrw_dirhist_3='/afs/nd.edu/user28/mcresap/datastruct/data_structures/lecture-code/04-linked-mem'
+let g:netrw_dirhist_4='/afs/nd.edu/user28/mcresap/datastruct/data_structures/lecture-code/03-linked-lists'
+let g:netrw_dirhist_5='/afs/nd.edu/user28/mcresap/systemsprog/cse-20289-sp18-assignments/homework03/homework03'
+let g:netrw_dirhist_6='/afs/nd.edu/user28/mcresap/systemsprog/cse-20289-sp18-project/www'

@@ -1,0 +1,12 @@
+/* My program 3 is supposed to solve for the roots of quadratic equations using the quadratic formula.
+Users can enter the coefficients a, b, and c of their equation and the program will return the roots. 
+	The program first introduces new variables a, b, c, x1, and x2 as real numbers to be inputted 
+or solved for. The user is then asked to input their a, b, and c values and these inputted numbers 
+become the assigned value of a, b, and c. Then the program solves the quadratic equation using
+multiplication, division, and the sqrt and pow functions. The solutions to the quadratic equation are 
+assigned to be the values of x1 and x2. Finally, the program displays the roots (x1 and x2) to the user.
+	I checked the program for correctness by checking different quadratics that I knew the roots for. 
+Then, I checked more complex equations involving real numbers/decimals with my calculator. Each 
+equation I checked produced correct results and the only cases that produced incorrect results were 
+those when I tried to input a fraction as a, b, or c. I think that it must not be possible to input 
+a fraction as a variable's value.*/

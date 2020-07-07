@@ -1,0 +1,121 @@
+data_to_sort	dcd		34, 23, 22, 8, 50, 74, 2, 1, 17, 40
+list_elements	dcd		10
+			
+main		ldr		r3, =data_to_sort   ; Load the starting address of the first
+			;		of element of the array of numbers into r3
+			ldr		r4, =list_elements  ; address of number of elements in the list
+			ldr		r4, [r4]            ; number of elements in the list
+			
+			
+			add		r5, r3, #400	    ; location of first element of linked list - "head pointer"
+		
+			;#################################################################################
+			;		Include any setup code here prior to loop that loads data elements in array
+			;#################################################################################
+			mov		r1, #0			;set r1 to 0
+			mov		r6, r5				;put addr of head pointer in r7
+			;#################################################################################
+			;		Start a loop here to load elements in the array and add them to a linked list
+			;#################################################################################
+done_or_insert
+			cmp		r4, r1				;compare counter and length 
+			beq		resets			;see if list has been fully built
+			b			insert				;otherwise continue to insert
+			
+loop
+			add		r6, r6, #32       ;every time you create a new struct, add 32 to r6
+			add		r3, r3, #4		;change where r3 points in array
+			add		r1, r1, #1		;update counter by 1 because added an element so closer to end
+			b			done_or_insert
+			
+			;#################################################################################
+			;		Add insert, swap, delete functions
+			;#################################################################################
+insert
+			ldr		r10, [r3]			;data into temp 
+			mov		r2, #-1			;set to null for next pointer
+			str		r10, [r6, #4]	;store data val in struct
+			str		r2, [r6, #8]		;next pointer set to null
+			cmp		r1, #0			;check if counter is 0 so know if inserting first element
+			beq		case_first
+			sub		r11, r6, #28	;val of prev struct data 4 above addr of prev
+			str		r11, [r6]			;addr of prev stored in struct
+			add		r9, r6, #4		;data val od current struct
+			str		r9, [r11, #4]	;location of current struct stored as next in prev struct
+			b		loop
+case_first
+			str		r2, [r6]			;prev addr is null bc nothing behind first elem
+			b		loop					;move PC
+resets
+			mov		r1, #0			;reset r1 
+			mov		r6, r5				;reset r6 to be head pointer
+			mov		r11, r5			;new head pointer set to old head pointer
+do
+			add		r1, r1, #1		;iterate counter by 1
+			cmp		r1, r4				;check if counter if length to see if done swapping
+			bge		delete1
+			add		r6, r6, #32		;move r6 to next struct 
+			mov		r7, r6				;initialize j
+			b		swap
+			
+swap
+			cmp		r7, r11				;if j>0
+			ble		do						;if not, branch
+			ldr		r8, [r7, #4]			;data stored in current struct
+			ldr		r13, [r7]				;prev addr
+			ldr		r9, [r13]				;value of prev addr
+			cmp		r8, r9				;current data vs. prev data if current>prev, branch
+			bge		do
+			ldr		r13, [r7]				;addr of prev data
+			ldr		r10, [r13, #-4]		;addr of prev prev data
+			
+			str		r10, [r7]				;prev prev stored in current's prev
+			cmp		r10, r2				;check if beginning of list, which is a special case 
+			beq		if_first
+			add		r8, r7, #4			;addr of prev prev's next
+			str		r8, [r10, #4]		;current's data addr stored in prec prev's next
+			b		firstisweird
+			
+if_first
+			mov		r11, r7				;new head pointer in swap
+			
+firstisweird
+			ldr		r10, [r7, #8] 		;next
+			str		r10, [r13, #4]		;next stored in prev's next
+			cmp		r10, r2				;check if at end of list then do endisweird if we are
+			beq		endisweird
+			str		r13, [r10, #-4]		;prev's addr stored in current'd next's prev
+endisweird
+			add		r8, r7, #4			;addr of curr data
+			str		r8, [r13, #-4]		;curr data addr stored in prev's previous spot
+			str		r13, [r7, #8]			;prev's data stored in current's next spot
+			b		swap
+			
+			
+delete1
+			add		r0, r0, r0
+			mov		r1, #1				;reset counter
+delete2
+			cmp		r1, r4					;check counter with length  to see if went through whole list
+			beq		exit
+			ldr		r8, [r11, #4]		;data val in current struct loaded
+			ldr		r13, [r11, #8]		;next addr loaded
+			ldr		r9, [r13]				;val of next data loaded
+			cmp		r8, r9				;current data vs prev data to see if the same
+			bne		go_next
+			ldr		r8, [r7]				;prev addr from struct that's getting deleted
+			ldr		r13, [r7, #8]			;next addr of deleted struct
+			str		r8, [r13, #-4]		;data set to be prev addr
+			str		r13, [r8, #4]			;next data is set to be the next
+			add		r1, r1, #1			;counter update
+			b		go_next
+			
+			
+go_next										;move to the next address/struct
+			ldr		r13, [r11, #8]		;next addr from the current's next
+			sub		r13, r13, #4			;get top of struct 
+			mov		r11, r13				;go to next addr
+			add		r1, r1, #1			;update counter
+			b		delete2
+			
+exit

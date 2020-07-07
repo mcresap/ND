@@ -1,0 +1,11 @@
+{
+  "base_url": "/",
+  "hostname": "student01.cse.nd.edu",
+  "notebook_dir": "/afs/nd.edu/user28/mcresap/systemsprog/cse-20289-sp18-assignments/homework04",
+  "password": false,
+  "pid": 18604,
+  "port": 9001,
+  "secure": false,
+  "token": "591e29a057b39d3146d1b0ad6d81a7a2476339ace4cf3012",
+  "url": "http://student01.cse.nd.edu:9001/"
+}

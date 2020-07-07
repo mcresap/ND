@@ -1,0 +1,24 @@
+/* 1.The user can run this graph program to view a cosine graph using ASCII art. The graph 
+is turned so the x axis runs vertically down and each line of the graph displas the x an 
+y values for that line for the user. The program uses "#" to display the y values but 
+rounds to the nearest whole number so is not very accurate but gives the user a sense for 
+what the graph looks like. The program also displayes the max and min values that occur on 
+the domain displayed along with the graphed function in the beginning along with 
+the x values at these points.
+2. This program starts by displaying what function it will be graphing. The program uses 
+double for the variables x, y, the max and min, and the x values for the max and min.
+The program use for loops to graph the function and if statements to find the max and min
+and x values at the max and min. The first for loop starts at x=0 and goes until the max x
+ value of 17, incrementing by .2 every time it runs the loop. Then the program uses the 
+cosine equation to change the y value and, using iomanip formatting, displays x and y at 
+that point rounded to 2 decimal places. Then the for loop 
+includes an if statement loop that records the max and min values of y and what x is at 
+these points into variables. Then there is a for loop also inside the original for loop 
+that displays # until it has displayed enough to equal the y value for that line/that 
+iteration of the loop. Then a new line is created and the for loop runs again (until 
+x=17). The program finishes by displaying the min and max values with their accompanying x 
+values.
+3. I verified that the output was correct by graphing the function I chose on a calculator 
+and comparing it to the graph outputted by my program. I also calculated the min and max 
+values and checked the x values at the min and max on the domain I chose to ensure they 
+were the same ones calculated and displayed in my program.*/

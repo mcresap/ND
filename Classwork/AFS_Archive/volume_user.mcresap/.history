@@ -1,0 +1,80 @@
+#+1512790943
+cd lab9
+#+1512790945
+cd ..
+#+1512790949
+cd lab8
+#+1512790952
+cd Life/
+#+1512791020
+lifeboard.h
+#+1512791026
+vim lifeboad.h
+#+1512791034
+vim lifeboard.h
+#+1512792654
+cd
+#+1512796266
+g++ final.cpp gfxnew.o -lX11 -o final
+#+1512875138
+cl
+#+1512875788
+vom final.cp
+#+1512878318
+:q
+#+1512960419
+Final/
+#+1512964392
+mmake
+#+1512965447
+vim
+#+1512968014
+a.out
+#+1512968020
+/a.out
+#+1513042231
+cd F
+#+1513043436
+exig
+#+1513043823
+vim final
+#+1513043829
+vim final.cpp
+#+1513044723
+exir
+#+1513099929
+final
+#+1513100107
+g++ acfinal.cpp gfx.o -o -lX11 acfinal
+#+1513100120
+g++ acfinal.cpp gfx.h -o -lX11 acfinal
+#+1513100128
+g++ acfinal.cpp gfxnew.o -o -lX11 acfinal
+#+1513100139
+g++ acfinal.cpp gfxnew.h -o -lX11 acfinal
+#+1513100144
+g++ acfinal.cpp gfxnew.h -lX11 acfinal
+#+1513104869
+clear
+#+1513107337
+g++ acfinal.cpp gfxnew.o -lX11 -o acfinal
+#+1513107338
+acfinal
+#+1513129649
+vim Makefile
+#+1513130740
+cd cse20311/
+#+1513130743
+cd Final/
+#+1513131518
+ls
+#+1513131521
+vim project.cpp
+#+1513131616
+cd cse20311/Final/
+#+1513133392
+make
+#+1513133395
+project
+#+1513133398
+exit

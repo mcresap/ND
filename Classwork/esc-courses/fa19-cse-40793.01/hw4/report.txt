@@ -1,0 +1,43 @@
+# Maria Cresap, mcresap
+a. testing process:
+	
+	i. I chose the selected features to check some things that are relevant to the split 
+	function. I wanted to confirm the file was not empty and had content. Then I wanted to 
+	check that the file even existed. I also checked that the specified lines given were 
+	present and if the value given was an integer or not to make sure it is a valid line 
+	number. I also checked the length of the file data and the content and value. The length 
+	is checked first because content doesn't need to be checked if the length is zero. We 
+	would also get an error if the value is >0.
+	
+	ii. For example, if there is not a file that corresponds to the name given by a user, 
+	you want to report an error and not do any action. I used the error marker for the 
+	filename to see if the filename exists and because we want an error otherwise. Another 
+	example would be the content of the file data which we want to check only if the length 
+	of the file is not zero. We wouldn't want to see the content if this marker isn't 
+	checked first.
+	
+	iii. I created 2304 test case frames without annotations.
+	
+	iv. I created 67 test case frames with annotations.
+
+b. applying testing to our work:
+	
+	i. I chose to apply this to our functions useTicket() and addTicket(). useTicket() 
+	is for a user to use one of the deals they have in their ticket wallet. addTicket() 
+	is when a user wants to add a deal to their ticket wallet and will add it.
+	
+	ii. Testable features and testing properties:
+		useTicket()
+			- Deal State - event deleted
+				- Ticket still in wallet
+				- Ticket removed from wallet so user can't use it
+			- User state - added ticket to wallet already
+				- Ticket not in wallet
+				- Ticket in wallet
+		addTicket()
+			- Deal state - how many people already have tickets compared to capacity
+				- if capacity >= tickets left
+				- if capacity < tickets keft
+			- User state - how many deals they've used vs. not used
+				- if deals not used >=3
+				- if deals not used < 3

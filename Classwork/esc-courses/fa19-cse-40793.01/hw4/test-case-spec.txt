@@ -1,0 +1,40 @@
+# File
+  Size:
+      Empty.					[property emptyfile]	
+      Not empty.
+  Number of lines in the file:
+      None.						[error]	
+      One.						
+      Thousand.					[if !emptyfile]	[property fileLength]
+  
+# Filename
+  Presence of a file corresponding to the name:
+      Not present.				[error]	
+      Present.					[single] [property fileName]
+
+# specifiedLines
+  Presence of line number to split at:
+	Present. [single] [property specifiedLines]
+	Not present. [if !specifiedLines]
+
+  Integer:
+	Is an int.
+	Is not and int.  [error]
+
+# FileData
+  Length:
+    0. 			[property zero]
+	size.
+	maxint.
+	size*2.
+
+  Content:
+	alphanumeric characters. 	[if !zero]
+	special characters.			[if !zero]
+	spaces.						[if !zero]
+
+  Value:
+    0.
+    >0.
+    <0.					[error]
+    maxint. 			[single]

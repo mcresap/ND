@@ -1,0 +1,42 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    background-color: 
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#titleLabel {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#ratingLabel{
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.leftPanel {
+    flex: 1;
+    width: 100px;
+    text-align: center;
+}
+
+.centerPanel {
+    flex: 2;
+    text-align: center;
+    justify-content: center;
+}
+
+.rightPanel {
+    flex: 1;
+    width: 100px;
+    text-align: center;
+    justify-content: center;
+}

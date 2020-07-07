@@ -1,0 +1,19 @@
+imsettings information
+==========================
+Is DBus enabled: yes
+Is imsettings enabled: yes
+Is GTK+ supported: yes
+Is Qt supported: no
+DESKTOP_SESSION: gnome
+DISABLE_IMSETTINGS: 
+IMSETTINGS_DISABLE_DESKTOP_CHECK: 
+DBUS_SESSION_BUS_ADDRESS: unix:abstract=/tmp/dbus-Fxt3xKU2Vz,guid=3676f21b83444107294417b000000018
+GTK_IM_MODULE: 
+QT_IM_MODULE: xim
+XMODIFIERS: @im=none
+IMSETTINGS_MODULE: none
+IMSETTINGS_INTEGRATE_DESKTOP: yes
+
+
+IM-Settings-Daemon[3963]: WARNING **: Unable to monitor /afs/nd.edu/user28/mcresap/.xinputrc: Error stating file '/afs/nd.edu/user28/mcresap/.xinputrc': No such file or directory
+IM-Settings-Daemon[3963]: INFO: Current IM is: none
